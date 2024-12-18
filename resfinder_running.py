@@ -104,7 +104,7 @@ def summarize_result(bac_name, result_file):
                 # location was used to identity the overlap
                 amrg = amrg_info[0]
                 location = amrg_info[6]
-                identity = amrg_info[1]
+                identity = amrg_info[1].strip().split(', ')[0]
                 # add the amrg information to the table
                 amrgs.append([amrg, identity])
     return amrgs
