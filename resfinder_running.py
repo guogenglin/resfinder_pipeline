@@ -134,7 +134,7 @@ def write_to_output(workpath, summarized_result, outname):
             for i in range(len(amrgs)):
                 if ref_amrg == amrgs[i][0]:
                     identity = amrgs[i][1]
-                    if not ref_amrg ==' Overlap':
+                    if not ref_amrg =='Overlap':
                         number += 1
             amrg_table.append(identity)
         line.append(str(number))
