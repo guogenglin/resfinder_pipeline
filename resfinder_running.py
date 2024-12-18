@@ -129,7 +129,7 @@ def write_to_output(workpath, summarized_result, outname):
         line = [bac_name]
         number = 0
         amrg_table = []
-        for ref_amrg in all_detected_genes[1:]:
+        for ref_amrg in all_detected_genes[2:]:
             identity = 'NA'
             for i in range(len(amrgs)):
                 if ref_amrg == amrgs[i][0]:
