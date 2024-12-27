@@ -11,7 +11,7 @@ import subprocess
 import sys
 import shutil
 
-def run_resfiner(workpath):
+def run_resfiner(workpath, file_suffix):
     # iterate every genome file in this filefolder
     for genome_file in pathlib.Path(workpath).iterdir():
         if not str(genome_file).endswith(file_suffix):
