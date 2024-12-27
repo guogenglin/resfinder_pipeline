@@ -14,13 +14,13 @@ import shutil
 def run_resfiner(workpath):
     # iterate every genome file in this filefolder
     for genome_file in pathlib.Path(workpath).iterdir():
-        if not str(genome_file).endswith('.fasta'):
+        if not str(genome_file).endswith(file_suffix):
             continue
         else:
             # pathlib iterdir will return a full-length workpath, we only need the last one, which is the file name
             genome_file = str(genome_file).split('\\')[-1]
             # strip the suffix to get the file name, as the output file 
-            output = genome_file.strip('.fasta')
+            output = genome_file.strip(file_suffix)
             # run resfinder
             command = 'run_resfinder.py -l 0.6 -t 0.9 --ignore_missing_species -acq -d -ifa {} -o {}'.format(genome_file, output)
             subprocess.run(command, shell=True)
@@ -144,10 +144,13 @@ def write_to_output(workpath, summarized_result, outname):
     output.close()
 
 def main():
+    file_suffix = '.fasta'
+    if len(sys.argv) > 1:
+        file_suffix = '.' + sys.argv[1]
     # open the work filefolder and locate it
     workpath = pathlib.Path.cwd()
     # do resfinder
-    run_resfiner(workpath)
+    run_resfiner(workpath, file_suffix)
     # summerize the result
     generate_output(workpath)
     
