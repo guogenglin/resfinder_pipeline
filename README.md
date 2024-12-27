@@ -53,3 +53,9 @@ python resfinder_running.py
 Beyond the results file for every bacteria isolates, 2 filefolder and 2 files will be generated. 2 filefolder named 'amr' and 'disinfectant' contain all correspond result files for those bacteria isolates, and 2 file named 'res_sum_results.tsv' and 'dis_sum_results.tsv' contain the summarized correspond result.
 
 You must be noticed that an extra result named 'Overlap' could be found in the headline of the summarized table, which means there are one gene was predicted as different antimicrobial resistance genes, you should check the result file in the filefolder for the details, if you want to ignore it, you can just remove this column.
+
+# Reminds
+This script will default recognize the file with '.fasta' as suffix as the genome file need to be processed, if the suffix of your sequence is others, such as '.fa', you need to add the suffix in the end of the command, for example:
+```
+python resfinder_running.py fa
+```
