@@ -18,9 +18,9 @@ def run_resfiner(workpath, file_suffix):
             continue
         else:
             # pathlib iterdir will return a full-length workpath, we only need the last one, which is the file name
-            genome_file = str(genome_file).split('\\')[-1]
+            genome_file = str(genome_file).split('/')[-1]
             # strip the suffix to get the file name, as the output file 
-            output = genome_file.strip(file_suffix)
+            output = genome_file[0:-len(file_suffix)]
             # run resfinder
             command = 'run_resfinder.py -l 0.6 -t 0.9 --ignore_missing_species -acq -d -ifa {} -o {}'.format(genome_file, output)
             subprocess.run(command, shell=True)
