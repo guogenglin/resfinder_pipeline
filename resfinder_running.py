@@ -3,7 +3,7 @@
 Created on Tue Dec 17 10:46:33 2024
 
 @author: Genglin Guo
-@e-mail: 2019207025.njau.edu.cn
+@e-mail: 2019207025@njau.edu.cn
 """
 
 import pathlib
@@ -154,3 +154,4 @@ def main():
     generate_output(workpath)
     
 main()
+
